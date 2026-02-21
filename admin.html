@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление проектами | Портфолио</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/admin.css">
+</head>
+<body>
+    <header class="admin-header">
+        <div class="container">
+            <h1>Управление портфолио</h1>
+            <nav class="admin-nav">
+                <a href="index.html">Все проекты</a>
+                <a href="finance.html">Финансы</a>
+                <a href="category2.html">Категория 2</a>
+                <a href="category3.html">Категория 3</a>
+                <a href="admin.html" class="active">Добавить проект</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="admin-section">
+            <h2>Добавить новый проект</h2>
+            
+            <form id="projectForm" class="project-form">
+                <div class="form-group">
+                    <label for="projectName">Название проекта *</label>
+                    <input type="text" id="projectName" name="name" required placeholder="Введите название проекта">
+                </div>
+
+                <div class="form-group">
+                    <label for="projectDesc">Описание *</label>
+                    <textarea id="projectDesc" name="description" required placeholder="Опишите проект" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectUrl">Ссылка на проект *</label>
+                    <input type="url" id="projectUrl" name="url" required placeholder="https://example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="projectCategory">Категория</label>
+                    <select id="projectCategory" name="category">
+                        <option value="index">Все проекты</option>
+                        <option value="finance">Финансы</option>
+                        <option value="category2">Категория 2</option>
+                        <option value="category3">Категория 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectIcon">Иконка (эмодзи)</label>
+                    <input type="text" id="projectIcon" name="icon" placeholder="🚀" maxlength="10">
+                </div>
+
+                <div class="form-group">
+                    <label for="projectTags">Теги (через запятую)</label>
+                    <input type="text" id="projectTags" name="tags" placeholder="веб, frontend, react">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Добавить проект</button>
+                    <button type="reset" class="btn btn-secondary">Очистить форму</button>
+                </div>
+            </form>
+
+            <div id="message" class="message"></div>
+        </section>
+
+        <section class="admin-section">
+            <h2>Существующие проекты</h2>
+            <div id="projectsList" class="projects-list">
+                <!-- Проекты будут загружены здесь -->
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/admin.js"></script>
+</body>
+</html>
