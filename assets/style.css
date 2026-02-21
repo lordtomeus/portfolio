@@ -136,6 +136,28 @@ body {
     color: rgba(255, 255, 255, 0.9);
 }
 
+/* Теги проектов */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tag {
+    padding: 4px 12px;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.project-card:hover .tag {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
 /* Footer */
 .footer {
     text-align: center;

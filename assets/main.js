@@ -1,20 +1,21 @@
 // Основной JavaScript файл для портфолио
 
 // Проекты - редактируйте здесь
+// tags: массив тегов для проекта
 const projectsData = {
     index: [
-        { name: 'Проект 1', description: 'Описание проекта', url: 'https://github.com', icon: '🚀' },
-        { name: 'CoinGlass Scanner', description: 'Сканер для криптобирж', url: 'https://github.com', icon: '📊' },
-        { name: 'Проект 2', description: 'Описание проекта', url: 'https://github.com', icon: '💡' }
+        { name: 'Проект 1', description: 'Описание проекта', url: 'https://github.com', icon: '🚀', tags: ['веб', 'frontend'] },
+        { name: 'CoinGlass Scanner', description: 'Сканер для криптобирж', url: 'https://github.com', icon: '📊', tags: ['криптовалюта', 'трейдинг'] },
+        { name: 'Проект 2', description: 'Описание проекта', url: 'https://github.com', icon: '💡', tags: ['backend', 'api'] }
     ],
     finance: [
-        { name: 'CoinGlass Scanner', description: 'Сканер для криптобирж', url: 'https://github.com', icon: '📊' }
+        { name: 'CoinGlass Scanner', description: 'Сканер для криптобирж', url: 'https://github.com', icon: '📊', tags: ['криптовалюта', 'трейдинг'] }
     ],
     category2: [
-        { name: 'Проект 2', description: 'Описание проекта', url: 'https://github.com', icon: '💡' }
+        { name: 'Проект 2', description: 'Описание проекта', url: 'https://github.com', icon: '💡', tags: ['backend', 'api'] }
     ],
     category3: [
-        { name: 'Проект 3', description: 'Описание проекта', url: 'https://github.com', icon: '⚡' }
+        { name: 'Проект 3', description: 'Описание проекта', url: 'https://github.com', icon: '⚡', tags: ['мобильный', 'ios'] }
     ]
 };
 
@@ -43,6 +44,7 @@ function renderProjects() {
             <div class="project-icon">${project.icon || '📁'}</div>
             <h3>${project.name}</h3>
             <p>${project.description}</p>
+            ${project.tags && project.tags.length > 0 ? `<div class="project-tags">${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>` : ''}
         `;
         
         grid.appendChild(card);
